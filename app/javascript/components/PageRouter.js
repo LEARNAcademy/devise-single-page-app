@@ -11,20 +11,29 @@ import Apartments from './pages/Apartments'
 
 class PageRouter extends React.Component {
   render () {
-    const{ loggedIn } = this.props
+    const{
+      apartments,
+      loggedIn
+    } = this.props
+    
     return (
       <React.Fragment>
-        <Switch>
-          <Route 
-            exact 
-            path="/" 
-            render={(props) => <Home {...props} loggedIn={loggedIn} /> }
-          />
-          <Route 
-            path="/apartments" 
-            render={(props) => <Apartments {...props} loggedIn={loggedIn} /> }
-          /> 
-        </Switch>
+        {loggedIn &&
+          <Switch>
+            <Route 
+              path="/" 
+              render={(props) => <Apartments {...props} apartments={apartments} /> }
+            /> 
+          </Switch>
+        }
+        {!loggedIn &&
+          <Switch>
+            <Route 
+              path="/" 
+              render={(props) => <Home {...props} apartments={apartments} /> }
+            />
+          </Switch>
+        }
       </React.Fragment>
     );
   }

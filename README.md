@@ -1,6 +1,6 @@
 ## TODO
 
-redirect from Home to Apartments 
-fetch list of apartments on apartments 
+ - done - redirect from Home to Apartments 
+- done - fetch list of apartments on apartments 
 fetch list of apartments on home
 form to create apartments
