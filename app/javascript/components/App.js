@@ -31,8 +31,24 @@ class App extends React.Component {
     })
   }
   
+  createApartment = (apartment) => {
+    fetch("/apartments", {
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      method: 'POST',
+      body: JSON.stringify({ apartment })
+    })
+    .then((response)=> response.json())
+    .then((json)=>{
+      debugger
+    })
+  }
+  
   render () {
-    const{ apartments } = this.state
+    const{ 
+      apartments
+    } = this.state
     const {
       logged_in, 
       sign_in_route, 
@@ -51,6 +67,7 @@ class App extends React.Component {
           <PageRouter 
             loggedIn={logged_in}
             apartments={apartments}
+            handleNewApartment={this.createApartment}
           />
         </Router>
       </React.Fragment>

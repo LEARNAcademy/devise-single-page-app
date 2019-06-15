@@ -13,6 +13,7 @@ class PageRouter extends React.Component {
   render () {
     const{
       apartments,
+      handleNewApartment,
       loggedIn
     } = this.props
     
@@ -22,7 +23,7 @@ class PageRouter extends React.Component {
           <Switch>
             <Route 
               path="/" 
-              render={(props) => <Apartments {...props} apartments={apartments} /> }
+              render={(props) => <Apartments {...props} handleNewApartment= {handleNewApartment} apartments={apartments} /> }
             /> 
           </Switch>
         }
