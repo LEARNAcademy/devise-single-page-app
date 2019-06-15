@@ -8,6 +8,7 @@ import {
 
 import Home from './pages/Home'
 import Apartments from './pages/Apartments'
+import NewApartment from './pages/NewApartment'
 
 class PageRouter extends React.Component {
   render () {
@@ -22,9 +23,15 @@ class PageRouter extends React.Component {
         {loggedIn &&
           <Switch>
             <Route 
+              exact
               path="/" 
               render={(props) => <Apartments {...props} handleNewApartment= {handleNewApartment} apartments={apartments} /> }
             /> 
+            <Route 
+              exact
+              path="/new-apartment"
+              render={(props)=><NewApartment {...props} handleNewApartment={handleNewApartment} />}
+            />
           </Switch>
         }
         {!loggedIn &&

@@ -1,6 +1,5 @@
-## TODO
+# Sample Apartment App
 
- - done - redirect from Home to Apartments 
-- done - fetch list of apartments on apartments 
-fetch list of apartments on home
-form to create apartments
+This is a functionally complete Apartment App implimentation from an in-class walkthrough of the challenge.
+
+Please use as a guid in finishing your own app, but try not to copy code from here.

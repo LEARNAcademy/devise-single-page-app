@@ -20,7 +20,7 @@ class App extends React.Component {
   }
   
   getApartments = () =>{
-    fetch("/apartments",{
+    return fetch("/apartments",{
       headers:{
         'Content-Type': 'application/json'
       }
@@ -28,11 +28,14 @@ class App extends React.Component {
     .then((response)=> response.json())
     .then((json)=>{
       this.setState({apartments: json})
+      return new Promise(function(resolve) {
+        return resolve()
+      })
     })
   }
   
   createApartment = (apartment) => {
-    fetch("/apartments", {
+    return fetch("/apartments", {
       headers:{
         'Content-Type': 'application/json'
       },
@@ -41,7 +44,7 @@ class App extends React.Component {
     })
     .then((response)=> response.json())
     .then((json)=>{
-      debugger
+      return this.getApartments()
     })
   }
   

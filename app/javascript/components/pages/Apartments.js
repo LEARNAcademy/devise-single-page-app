@@ -1,21 +1,18 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { Button } from 'reactstrap'
+import React from "react";
+import PropTypes from "prop-types";
 
-import ApartmentList from '../ApartmentList'
+import { Link } from 'react-router-dom';
+
+import ApartmentList from '../ApartmentList';
 
 class Apartments extends React.Component {
-  newApartment = ()=>{
-    const{ handleNewApartment } = this.props
-    handleNewApartment({address_1: '123 Holly Ln.', city: 'Cedarburg'})
-  }
   render () {
-    const{ apartments } = this.props
+    const{ apartments } = this.props;
     return (
       <React.Fragment>
         <h1>Hello from Apartments</h1>
+        <Link to='/new-apartment' className="btn btn-primary">New Apartment</Link>
         <ApartmentList apartments={apartments} />
-        <Button onClick={this.newApartment}> New Apartment</Button>
 
       </React.Fragment>
     );
